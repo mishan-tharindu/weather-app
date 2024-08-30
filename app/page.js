@@ -3,15 +3,17 @@
 'use client';
 
 import { useState } from 'react';
+import { toast } from 'react-toastify';  // Import the toast function
 
 export default function Home() {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   const getWeather = async () => {
     if (!city){
-      setError("Please Enter a city name.");
+      // setError("Please Enter a city name.");
+      toast.error("Please Enter a city name.", {autoClose: 5000});
       return;
     } 
 
@@ -25,11 +27,14 @@ export default function Home() {
 
         // Handle different response errors
         if (response.status === 404) {
-          setError("City not found. Please check the spelling and try again.");
+          // setError("City not found. Please check the spelling and try again.");
+          toast.error("City not found. Please check the spelling and try again.", {autoClose: 5000});
         } else if (response.status === 401) {
-          setError("Invalid API key. Please check your API key and try again.");
+          // setError("Invalid API key. Please check your API key and try again.");
+          toast.error("Invalid API key. Please check your API key and try again.", {autoClose: 5000});
         } else {
-          setError("An error occurred while fetching the weather data. Please try again later.");
+          // setError("An error occurred while fetching the weather data. Please try again later.");
+          toast.error("An error occurred while fetching the weather data. Please try again later.", {autoClose: 5000});
         }
         setWeather(null);
         return;
@@ -38,11 +43,13 @@ export default function Home() {
 
       const data = await response.json();
       setWeather(data);
-      setError(null);  // Clear any previous errors
+      // setError(null);  // Clear any previous errors
+      toast.dismiss();
 
     } catch (error) {
       console.error("Network error:", error);
-      setError("Unable to connect to the weather service. Please check your internet connection and try again.");
+      // setError("Unable to connect to the weather service. Please check your internet connection and try again.");
+      toast.error("Unable to connect to the weather service. Please check your internet connection and try again.", {autoClose: 5000});
       setWeather(null);  // Clear weather data on error
     }
   };
@@ -66,11 +73,11 @@ export default function Home() {
         </button>
       </div>
 
-      {error && (
+      {/* {error && (
         <div className="mt-4 text-red-600">
           <p>{error}</p>
         </div>
-      )}
+      )} */}
 
       {weather && (
         <div className="mt-10 p-6 bg-white rounded-lg shadow-md w-80 text-center">
