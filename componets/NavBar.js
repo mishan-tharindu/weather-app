@@ -15,7 +15,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="bg-blue-500 text-white">
+    <nav className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           
@@ -29,10 +29,10 @@ export default function NavBar() {
           {/* Center: Menu Items */}
           <div className="flex-1 flex justify-center">
             <div className="space-x-8 text-lg font-semibold">
-              <Link href="/menu-item-01" className="hover:text-red-500">Menu-item-01</Link>
-              <Link href="/menu-item-02" className="hover:text-red-500">Menu-item-02</Link>
-              <Link href="/menu-item-03" className="hover:text-red-500">Menu-item-03</Link>
-              <Link href="/menu-item-04" className="hover:text-red-500">Menu-item-04</Link>
+              <Link href="/about" className="hover:text-red-500">About Us</Link>
+              <Link href="/portfolio" className="hover:text-red-500">Portfolio</Link>
+              <Link href="/project" className="hover:text-red-500">Projects</Link>
+              <Link href="/contact" className="hover:text-red-500">Contact Us</Link>
             </div>
           </div>
 

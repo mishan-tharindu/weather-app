@@ -1,4 +1,4 @@
-import NavBar from "@/componets/NavBar.js";
+import NavBar from "@/componets/NavBar";
 import { Inter } from "next/font/google";
 import '@/styles/globals.css'; // Importing global CSS styles, including Tailwind CSS
 
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         <title>Weather App</title>
         <meta name="description" content="Simple Weather App using Next.js" />
       </head>
-      <body className="bg-gray-100 text-gray-800">
+      <body className="bg-cover bg-center text-black" style={{ backgroundImage: "url('/assets/images/back-img-01.jpg')" }}>
         <NavBar/> {/* Include the NavBar component */}
         <ToastContainer /> {/* Add the ToastContainer */}
         {children}
