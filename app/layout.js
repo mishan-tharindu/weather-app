@@ -1,8 +1,10 @@
+import NavBar from "@/componets/NavBar.js";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import '@/styles/globals.css'; // Importing global CSS styles, including Tailwind CSS
 
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +23,7 @@ export default function RootLayout({ children }) {
         <meta name="description" content="Simple Weather App using Next.js" />
       </head>
       <body className="bg-gray-100 text-gray-800">
+        <NavBar/> {/* Include the NavBar component */}
         <ToastContainer /> {/* Add the ToastContainer */}
         {children}
       </body>

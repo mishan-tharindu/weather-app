@@ -67,7 +67,7 @@ export default function Home() {
         />
         <button 
           onClick={getWeather}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700"
         >
           Get Weather
         </button>
